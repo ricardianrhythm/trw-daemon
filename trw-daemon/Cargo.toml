@@ -1,0 +1,32 @@
+[package]
+name = "trw-daemon"
+version = "0.1.0"
+edition = "2021"
+description = "A lightweight, open-source telemetry daemon for robotics fleets"
+license = "Apache-2.0"
+repository = "https://github.com/therobotworks/trw-daemon"
+readme = "README.md"
+keywords = ["robotics", "ros2", "telemetry", "fleet", "observability"]
+categories = ["command-line-utilities", "network-programming"]
+
+[features]
+default = ["ros2"]
+ros2 = []
+gpu = []
+
+[dependencies]
+axum = "0.8"
+clap = { version = "4", features = ["derive"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tokio = { version = "1", features = ["full"] }
+toml = "0.8"
+async-trait = "0.1"
+chrono = { version = "0.4", features = ["serde"] }
+tracing = "0.1"
+tracing-subscriber = "0.3"
+hostname = "0.4"
+
+[dev-dependencies]
+tower = { version = "0.5", features = ["util"] }
+http-body-util = "0.1"

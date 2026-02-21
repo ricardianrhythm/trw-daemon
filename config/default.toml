@@ -1,0 +1,24 @@
+# trw-daemon configuration
+# See README.md for full documentation of all options.
+
+[daemon]
+# HTTP server port
+port = 4040
+# How often to collect metrics (seconds)
+tick_interval_secs = 2
+# Override hostname (empty = auto-detect from OS)
+hostname = ""
+
+[collectors]
+# System metrics from /proc (always available on Linux)
+system = true
+# ROS2 node/topic discovery via ros2 CLI (requires ROS2 sourced)
+ros2 = true
+# GPU metrics via nvidia-smi or rocm-smi
+gpu = false
+
+[ros2]
+# Path to ros2 CLI binary (override if not on PATH)
+cli_path = "ros2"
+# Timeout for each CLI command (seconds)
+timeout_secs = 5
